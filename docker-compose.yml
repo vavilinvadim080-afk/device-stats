@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./device_stats.db:/app/device_stats.db
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
